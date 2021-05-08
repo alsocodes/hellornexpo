@@ -2,6 +2,8 @@ import * as React from 'react';
 import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import GetApi from './GetApi'
+import GetApiDetail from './GetApiDetail'
 
 function HomeScreen({route, navigation}) {
     return (
@@ -10,7 +12,7 @@ function HomeScreen({route, navigation}) {
             <Button
                 title="Go to Details"
                 onPress={() => navigation.navigate('Details',{
-                    data:"data dari home"
+                    data:"data dari home OK"
                 })}
             />
         </View>
@@ -43,8 +45,10 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="Details" component={DetailsScreen} />
+                {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+                {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
+                <Stack.Screen name="GetApi" component={GetApi}/>
+                <Stack.Screen name="GetApiDetail" component={GetApiDetail} test="123455"/>
             </Stack.Navigator>
         </NavigationContainer>
     );
